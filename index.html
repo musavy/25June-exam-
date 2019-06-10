@@ -74,6 +74,42 @@ checks('musavy')
     Example string: 'dog'
     Expected Output: d,do, dog, o, og, g  */
 
+    function string(str){
+
+    
+    var array=[];
+    for(var x=0,y=1;x<str.length; x++,y++)
+    {
+array[x]=str.substring(x,y);
+    }
+    var comb=[]
+    var temp="";
+    var slent=Math.pow(2, array.length);
+
+    for(var i=0;i<slent;i++){
+
+    
+    temp="";
+
+    for(var j=0;j<array.length;j++){
+        if((i&Math.pow(2,j))){
+            temp+=array[j]
+        }
+    }
+
+    if(temp !==""){
+
+    
+    comb.push(temp);
+    }
+    }
+    
+    console.log(comb.join("\n"));
+    }
+
+    string("dog")
+    
+
     console.log("###### Question 4 #######");
 
 
