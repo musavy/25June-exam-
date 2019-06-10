@@ -112,11 +112,36 @@ array[x]=str.substring(x,y);
 
     console.log("###### Question 4 #######");
 
+   /*  Write a JavaScript function that returns a passed string with letters in alphabetical order.
+    Example string: 'webmaster'
+    Expected Output: 'abeemrstw'
+    Assume punctuation and numbers symbols are not included in the passed string. */
+
+function alphabet(str){
+
+return str.split('').sort().join('');
+
+}
+console.log(alphabet("masood is the a crzy boy"));
 
 
 
     console.log("###### Question 5 #######");
+  /*   Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
+    Example string: 'the quick brown fox'
+    Expected Output: 'The Quick Brown Fox ' */
+function uppercase(str){
 
+var array=str.split('')
+var array1=[];
+for(var x=0;x<array.length;x++){
+    array1.push(array[x].charAt(0).toUpperCase()+array[x].slice(1)); 
+}
+return array1.join(' ');
+
+}
+
+console.log(uppercase("miran is my son"));
 
 
 
