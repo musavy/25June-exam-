@@ -2,13 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/574cbf4b96.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Studying for exam</title>
+    <style>
     
+    .fas {
+      height: 100px;
+      width: 50%;
+      text-align: center;
+      font-size: 100px;
+      color: tomato;
+    }
+    
+    </style>
   </head>
   
   <body>
+
+<h1>
+  <em>JavaScript Questions and Answers</em>
+  
+</h1>
+
+<h4>check it on the console</h4>
+<i class="fas fa-hand-point-down"></i>
+
     <script>
    
      
@@ -665,6 +685,28 @@ console.log("¤¤¤¤¤¤¤¤ Question 27 ¤¤¤¤¤¤¤¤¤¤");
 
 
 console.log("¤¤¤¤¤¤¤¤ Question 28 ¤¤¤¤¤¤¤¤¤¤");
+
+ // Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+
+const addStudent=(id,callback)=>{
+  callback();
+}
+function studentList(){
+  console.log("Hello");
+  
+}
+addStudent(1,studentList)
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 29 ¤¤¤¤¤¤¤¤");
+  //Write a JavaScript function to get the function name
+
+function Musavy(){
+  console.log(arguments.callee.name);
+  
+}
+Musavy();
+
 
 
 
