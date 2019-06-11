@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Studying for exam</title>
+    
   </head>
+  
   <body>
     <script>
-      document.write("Studying for exam");
+   
+     
       console.log("###### Question 1 #######");
       /*   Write a JavaScript function that reverse a number.
     Example x = 32243;
@@ -449,11 +452,143 @@ for(var i=0;i<l;i++){
 }
 return text;
 }
-console.log(makeid(8));
+console.log(+makeid(8));
 
 
 console.log("############# Question 21 ############");
 
+  /* 21. Write a JavaScript function to get all possible subset with a fixed length(for example 2) combinations in an array.
+  Sample array: [1, 2, 3] and subset length is 2
+  Expected output: [[2, 1], [3, 1], [3, 2], [3, 2, 1]] */
+
+const subset=(arra, arra_size)=>
+{
+  var result_set=[];
+  result;
+for(var i=0;i<Math.pow(2,arra.length);i++)
+{
+  result=[];
+  x=arra.length-1;
+  do{
+    if((i&(1<<x))!==0)
+    {
+      result.push(arra[x]);
+    }
+  }while(x--);
+  if(result.length>=arra_size)
+  {
+    result_set.push(result);
+  }
+}
+return result_set;
+
+}
+console.log(subset([1,2,3],2));
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 22 ¤¤¤¤¤¤¤¤¤¤");
+
+/*   22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
+  Sample arguments: 'w3resource.com', 'o'
+  Expected output: 2  */
+
+  const char_count=(str,letter)=>{
+    var letter_Count=0;
+    for(var position=0;position<str.length;position++)
+    {
+      if(str.charAt(position)==letter)
+      {
+        letter_Count+=1;
+      }
+    }
+    return letter_Count;
+  }
+  console.log(char_count("masood is a good guy",'o'));
+  
+
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 23 ¤¤¤¤¤¤¤¤¤¤");
+
+ /*  23. Write a JavaScript function to find the first not repeated character.
+  Sample arguments: 'abacddbec'
+  Expected output: 'e' */
+
+
+  const not_repeated_char=(str)=>{
+    var arral=str.split('');
+    var result='';
+    var ctr=0;
+for(var x=0;x<arral.length;x++)
+{
+  ctr=0;
+for(var y=0;y<arral.length;y++){
+  if(arral[x]===arral[y]){
+    ctr+=1;
+  }
+}
+if(ctr<2){
+  result=arral[x];
+  break;
+}
+}
+return result;
+  }
+
+  console.log(not_repeated_char("mmaassoooooooooood"));
+  
+
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 24 ¤¤¤¤¤¤¤¤¤¤");
+
+/*   24. Write a JavaScript function to apply Bubble Sort algorithm.
+  Note: According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order".
+  Sample array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+  Expected output: [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1] */
+
+  const bubble_Sort=(a)=>{
+var swapp;
+var n=a.length-1;
+var x=a;
+do{
+  swapp=false;
+  for(var i=0;i<n;i++){
+    if(x[i]<x[i+1])
+    {
+      var temp=x[i];
+      x[i]=x[i+1]
+      x[i+1]=temp;
+      swapp=true
+    }
+  }
+  n--;
+}while(swapp);
+return x;
+}
+
+console.log(bubble_Sort([12,345,4,564,122,84,98,64,9,1,3223]));
+
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 25 ¤¤¤¤¤¤¤¤¤¤");
+
+ /*  25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
+  Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
+  Expected output: "United States of America" */
+
+  function Longest_Country_Name(country_name) {
+    return country_name.reduce(function (lname, country) {
+      return lname.length > country.length ? lname : country;
+    },
+      "");
+  }
+  console.log(Longest_Country_Name(["Afghanitan", "iran", "Pakistan"]));
+
+
+console.log("¤¤¤¤¤¤¤¤ Question 26 ¤¤¤¤¤¤¤¤¤¤");
+console.log("¤¤¤¤¤¤¤¤ Question 27 ¤¤¤¤¤¤¤¤¤¤");
+console.log("¤¤¤¤¤¤¤¤ Question 28 ¤¤¤¤¤¤¤¤¤¤");
 
 
     </script>
